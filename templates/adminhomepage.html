@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/admin/homepage/">
+                <img src="{% static 'img/slogo.webp' %}" alt="" width="30" height="24"
+                    class="d-inline-block align-text-top">
+                Scrapmart
+            </a>
+            <a href="/admin/logout/" class="btn btn-danger"><span><i class="bi bi-box-arrow-left"></i></span>Logout</a>
+        </div>
+    </nav>
+
+    {% for message in messages %}
+    <div class="alert alert-info" role="alert">
+        {{message}}
+    </div>
+    {% endfor %}
+
+
+    <div class="card text-center">
+        <div class="card-body">
+            <h1 class="card bg-secondary text-white">Admin Panel</h1>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Manage Search database</h5>
+                            <img src="{% static 'img/listingrequests.webp' %}" class="img-fluid" style="height: 150px;width:150px;">
+                            <p class="card-text">View Shop Listing Requests and manage search database</p>
+                            <a href="/admin/listingrequests/" class="btn btn-dark btn-lg">View requests</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Manage User Database</h5>
+                            <img src="{% static 'img/userdb.webp' %}" class="img-fluid" style="height: 150px;width:150px;">
+                            <p class="card-text">Manage Scrapmart users</p>
+                            <a href="/admin/usermanage/" class="btn btn-dark btn-lg">Manage</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Add a Shop listing</h5>
+                            <img src="{% static 'img/addshop.webp' %}" class="img-fluid" style="height: 150px;width:150px;">
+                            <p class="card-text">Add a shop manually to the search database</p>
+                            <a href="/admin/addshop/" class="btn btn-dark btn-lg">Add a shop</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Manage Locations</h5>
+                            <img src="{% static 'img/location.webp' %}" class="img-fluid" style="height: 150px;width:150px;">
+                            <p class="card-text">Add a new city/locality to the search console</p>
+                            <a href="/admin/addlocations/" class="btn btn-dark btn-lg">Add Location</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">View User queries</h5>
+                            <img src="{% static 'img/query.webp' %}" class="img-fluid" style="height: 150px;width:150px;">
+                            <p class="card-text">View Contact queries by users</p>
+                            <a href="/admin/userqueries/" class="btn btn-dark btn-lg">Show Queries</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Scrapmart Mailer Daemon</h5>
+                            <img src="{% static 'img/mailer.webp' %}" class="img-fluid" style="height: 150px;width:150px;">
+                            <p class="card-text">Contact users using Scrapmart mailer</p>
+                            <a href="/admin/scrapmartmailer/" class="btn btn-dark btn-lg">Open Mailer</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="container" style="margin-top: 80px;">
+        <p class="float-end"></p>
+        <p style="text-align: center;">© 2020–2021 Scrapmart, Inc.</p>
+    </footer>
+{% endblock %}

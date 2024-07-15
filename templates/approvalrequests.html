@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/approvalrequests.css' %}">
+{% endblock %}
+{% block content %}
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/admin/homepage/">
+            <img src="{% static 'img/slogo.webp' %}" alt="" width="30" height="24" class="d-inline-block align-text-top">
+            Scrapmart
+        </a>
+        <a href="/admin/searchmanage/" class="btn btn-dark" style="margin-right: 100px;">Manage Profiles</a>
+        <a href="/admin/logout/" class="btn btn-danger"><span><i class="bi bi-box-arrow-left"></i></span>Logout</a>
+    </div>
+</nav>
+<h3 style="text-align: center;margin-top:20px;color:white">Listing requests will appear here</h3>
+<div class="container mt-4">
+    <div class="card">
+        {% if res %}
+        {% for listing in requests %}
+        <div style="margin: 40px" class="alert alert-secondary">
+            <div class="row">
+                <div class="col-md-3">
+                    <img class="img-fluid rounded" src="{% static 'img/avatar.webp' %}" width="150">
+                </div>
+                <div class="col-md-7">
+                    <p style="margin-top: 20px;">User ID: {{listing.user_id}}</p>
+                    <hr>
+                    <p>Shop name: {{listing.shopname}}</p>
+                    <hr>
+                    <p>Address: {{listing.shopaddress}}</p>
+                    <hr>
+                    <p>Phone Number: {{listing.shopcontact}}</p>
+                    <hr>
+                    <p>City: {{listing.city}}</p>
+                    <hr>
+                    <p>Locality: {{listing.locality}}</p>
+                    <hr>
+                    <p>Listing Status: <a style="color: red">{{listing.is_verified}}</a></p>
+                    <hr>
+                </div>
+                <div class="col-md-2">
+                    <a href="/admin/listingapprove/{{listing.id}}/" class="btn btn-success">Approve</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% else %}
+        <h3 style="text-align: center;">No Requests at the moment</h3>
+        {% endif %}
+        
+    </div>
+</div>
+<footer class="container" style="margin-top: 40px;">
+    <p class="float-end"></p>
+    <p style="text-align: center;color:white">© 2020–2021 Scrapmart, Inc.</p>
+</footer>
+{% endblock %}
