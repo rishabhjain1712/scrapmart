@@ -12,7 +12,7 @@ Scrapmart uses PostgresSQL as backend, so make sure you have it installed and ch
 The first thing to do is to clone the repository:
 
 ```sh
-$ git clone https://github.com/vivekx01/scrapmart.git
+$ git clone https://github.com/rishabhjain1712/scrapmart.git
 $ cd scrapmart
 ```
 
@@ -47,7 +47,6 @@ Screenshots:
 ![7](https://user-images.githubusercontent.com/72996825/124763750-ee66ed80-df51-11eb-832b-11a1a62d0a34.PNG)
 ![9](https://user-images.githubusercontent.com/72996825/124763755-eeff8400-df51-11eb-9eb9-438da4f14538.PNG)
 ![10](https://user-images.githubusercontent.com/72996825/124763757-ef981a80-df51-11eb-85d2-033cb402c65e.PNG)
-![11](https://user-images.githubusercontent.com/72996825/124763759-f030b100-df51-11eb-837c-38dd49fb6b1a.PNG)
 
 
 
