@@ -1,6 +1,6 @@
 # Project Scrapmart
 ## Deployed Version of the Project
-https://scrapmart.onrender.com/
+https://scrapmart-jgfe.onrender.com/
 
 ## Note 
 
